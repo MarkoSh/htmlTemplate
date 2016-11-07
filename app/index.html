@@ -26,54 +26,7 @@
     <style>@@include('header.min.css')</style>
 
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
-    <script>!function (e) {
-        "use strict";
-        function t(e, t, n) {
-            e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
-        }
-        function n(t, n) {
-            return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n
-        }
-        function a(t, a) {
-            if (e.localStorage && e.XMLHttpRequest)n(t, a) ? o(localStorage[t + "_content"]) : l(t, a); else {
-                var s = r.createElement("link");
-                s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0].appendChild(s), r.cookie = t
-            }
-        }
-        function l(e, t) {
-            var n = new XMLHttpRequest;
-            n.open("GET", t, !0), n.onreadystatechange = function () {
-                4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n.responseText, localStorage[e + "_file"] = t)
-            }, n.send()
-        }
-        function o(e) {
-            var t = r.createElement("style");
-            t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t.styleSheet.cssText = e : t.innerHTML = e
-        }
-        var r = e.document;
-        e.loadCSS = function (e, t, n) {
-            var a, l = r.createElement("link");
-            if (t)a = t; else {
-                var o;
-                o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r.getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1]
-            }
-            var s = r.styleSheets;
-            l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling);
-            var c = function (e) {
-                for (var t = l.href, n = s.length; n--;)if (s[n].href === t)return e();
-                setTimeout(function () {
-                    c(e)
-                })
-            };
-            return l.onloadcssdefined = c, c(function () {
-                l.media = n || "all"
-            }), l
-        }, e.loadLocalStorageCSS = function (l, o) {
-            n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function () {
-                a(l, o)
-            })
-        }
-    }(this);</script>
+    <script>!function(a){"use strict";function b(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&&a.attachEvent("on"+b,c)}function c(b,c){return a.localStorage&&localStorage[b+"_content"]&&localStorage[b+"_file"]===c}function d(b,d){if(a.localStorage&&a.XMLHttpRequest)c(b,d)?f(localStorage[b+"_content"]):e(b,d);else{var h=g.createElement("link");h.href=d,h.id=b,h.rel="stylesheet",h.type="text/css",g.getElementsByTagName("head")[0].appendChild(h),g.cookie=b}}function e(a,b){var c=new XMLHttpRequest;c.open("GET",b,!0),c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(f(c.responseText),localStorage[a+"_content"]=c.responseText,localStorage[a+"_file"]=b)},c.send()}function f(a){var b=g.createElement("style");b.setAttribute("type","text/css"),g.getElementsByTagName("head")[0].appendChild(b),b.styleSheet?b.styleSheet.cssText=a:b.innerHTML=a}var g=a.document;a.loadCSS=function(a,b,c){var d,e=g.createElement("link");if(b)d=b;else{var f;f=g.querySelectorAll?g.querySelectorAll("style,link[rel=stylesheet],script"):(g.body||g.getElementsByTagName("head")[0]).childNodes,d=f[f.length-1]}var h=g.styleSheets;e.rel="stylesheet",e.href=a,e.media="only x",d.parentNode.insertBefore(e,b?d:d.nextSibling);var i=function(a){for(var b=e.href,c=h.length;c--;)if(h[c].href===b)return a();setTimeout(function(){i(a)})};return e.onloadcssdefined=i,i(function(){e.media=c||"all"}),e},a.loadLocalStorageCSS=function(e,f){c(e,f)||g.cookie.indexOf(e)>-1?d(e,f):b(a,"load",function(){d(e,f)})}}(this);</script>
 
     <!-- Load Fonts CSS Start -->
     <script>
@@ -108,6 +61,8 @@
 <body>
 
 <!-- Custom HTML -->
+
+
 
 <!-- Optimized loading JS Start -->
 <script>var scr = {"scripts":[
