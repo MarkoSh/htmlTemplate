@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
-    sass = require('gulp-sass'),
+    scss = require('gulp-sass'),
     browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -26,9 +26,9 @@ gulp.task('browser-sync', function () {
     });
 });
 
-gulp.task('sass', ['headersass'], function () {
-    return gulp.src('app/sass/**/*.sass')
-        .pipe(sass({
+gulp.task('scss', ['headerscss'], function () {
+    return gulp.src('app/scss/**/*.scss')
+        .pipe(scss({
             includePaths: bourbon.includePaths
         }).on("error", notify.onError()))
         .pipe(rename({suffix: '.min', prefix: ''}))
@@ -38,9 +38,9 @@ gulp.task('sass', ['headersass'], function () {
         .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('headersass', function () {
-    return gulp.src('app/header.sass')
-        .pipe(sass({
+gulp.task('headerscss', function () {
+    return gulp.src('app/header.scss')
+        .pipe(scss({
             includePaths: bourbon.includePaths
         }).on("error", notify.onError()))
         .pipe(rename({suffix: '.min', prefix: ''}))
@@ -60,9 +60,9 @@ gulp.task('libs', function () {
         .pipe(gulp.dest('app/js'));
 });
 
-gulp.task('watch', ['sass', 'libs', 'browser-sync'], function () {
-    gulp.watch('app/header.sass', ['headersass']);
-    gulp.watch('app/sass/**/*.sass', ['sass']);
+gulp.task('watch', ['scss', 'libs', 'browser-sync'], function () {
+    gulp.watch('app/header.scss', ['headerscss']);
+    gulp.watch('app/scss/**/*.scss', ['scss']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
 });
@@ -91,7 +91,7 @@ gulp.task('removedist', function () {
     return del.sync('dist');
 });
 
-gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], function () {
+gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'scss', 'libs'], function () {
 
     var buildCss = gulp.src([
         'app/css/fonts.min.css',
