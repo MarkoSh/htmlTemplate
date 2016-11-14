@@ -21,7 +21,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-remove-html": "^1.1.2",
     "gulp-rename": "^1.2.2",
-    "gulp-scss": "^1.4.0",
+    "gulp-sass": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^5.0.0",
